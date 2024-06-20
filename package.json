@@ -11,6 +11,11 @@
         "user-friendly-status-ffmpeg": "./src/user-friendly-status-ffmpeg",
         "user-friendly-status-timer": "./src/user-friendly-status-timer"
     },
+    "files": [
+        "LICENSE",
+        "README.md",
+        "src/*"
+    ],
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
