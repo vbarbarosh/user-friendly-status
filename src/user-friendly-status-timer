@@ -1,0 +1,39 @@
+#!/usr/bin/env node
+
+const cli = require('@vbarbarosh/node-helpers/src/cli');
+const format_seconds = require('@vbarbarosh/node-helpers/src/format_seconds');
+const fs = require('fs');
+const shell_thru = require('@vbarbarosh/node-helpers/src/shell_thru');
+
+cli(main);
+
+async function main()
+{
+    const time0 = Date.now();
+    const fm = process.argv[2];
+    const timer = setInterval(tick, 1000);
+    try {
+        tick();
+        await shell_thru(process.argv.slice(3)).promise();
+        tick();
+    }
+    finally {
+        clearInterval(timer);
+    }
+    function tick() {
+        const seconds = (Date.now() - time0)/1000;
+        user_friendly_status(fm.replaceAll('{}', format_seconds(seconds)));
+    }
+}
+
+// Treat /dev/fd/3 as a special file for user-friendly messages.
+// But, if no such file was open, print use-friendly messages to the stderr.
+function user_friendly_status(s)
+{
+    const tmp = s + '\n';
+    fs.write(3, tmp, function (error) {
+        if (error) {
+            process.stderr.write(tmp);
+        }
+    });
+}

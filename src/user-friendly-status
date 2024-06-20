@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# http://www.gnu.org/software/bash/manual/bash.html#The-Set-Builtin
+# http://redsymbol.net/articles/unofficial-bash-strict-mode
+set -o nounset -o errexit -o pipefail
+
+# Treat /dev/fd/3 as a special file for user-friendly messages.
+# But, if no such file was open, print use-friendly messages to the stderr.
+if ! test -e /dev/fd/3; then
+    exec 3>&1
+fi
+
+echo >&3 "$@"

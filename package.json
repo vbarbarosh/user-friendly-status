@@ -15,5 +15,8 @@
     "bugs": {
         "url": "https://github.com/vbarbarosh/user-friendly-status/issues"
     },
-    "homepage": "https://github.com/vbarbarosh/user-friendly-status#readme"
+    "homepage": "https://github.com/vbarbarosh/user-friendly-status#readme",
+    "dependencies": {
+        "@vbarbarosh/node-helpers": "^3.36.0"
+    }
 }
