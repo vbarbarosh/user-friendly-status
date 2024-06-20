@@ -29,6 +29,8 @@
     "homepage": "https://github.com/vbarbarosh/user-friendly-status#readme",
     "dependencies": {
         "@vbarbarosh/ffmpeg-helpers": "^0.5.0",
-        "@vbarbarosh/node-helpers": "^3.36.0"
+        "@vbarbarosh/node-helpers": "^3.36.0",
+        "array.prototype.findlastindex": "^1.2.5",
+        "string.prototype.replaceall": "^1.0.10"
     }
 }

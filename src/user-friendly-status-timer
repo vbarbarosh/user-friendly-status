@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+require('./polyfill');
+
 const cli = require('@vbarbarosh/node-helpers/src/cli');
 const format_seconds = require('@vbarbarosh/node-helpers/src/format_seconds');
 const fs = require('fs');

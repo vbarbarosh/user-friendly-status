@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+require('./polyfill');
+
 const cli = require('@vbarbarosh/node-helpers/src/cli');
 const fs = require('fs');
 const shell_curl_progress = require('@vbarbarosh/node-helpers/src/shell_curl_progress');

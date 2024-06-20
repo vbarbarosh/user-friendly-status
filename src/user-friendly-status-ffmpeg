@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+require('./polyfill');
+
 const cli = require('@vbarbarosh/node-helpers/src/cli');
 const ffprobe = require('@vbarbarosh/ffmpeg-helpers/src/ffprobe');
 const fs = require('fs');
