@@ -11,7 +11,7 @@ cli(main);
 async function main()
 {
     const fm = process.argv[2];
-    await shell_curl_progress(args.slice(3), {
+    await shell_curl_progress(process.argv.slice(3), {
         user_friendly_status: s => user_friendly_status(fm.replaceAll('{}', s)),
     });
 }
