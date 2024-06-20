@@ -4,3 +4,10 @@ end user.
 ```shell
 npm install -g @vbarbarosh/user-friendly-status
 ```
+
+## Requirements
+
+| Binary | Version | Reason           |
+|--------|---------|------------------|
+| node   | 16.9.0  | stream.compose   |
+| curl   | 7.80    | --progress-meter |
