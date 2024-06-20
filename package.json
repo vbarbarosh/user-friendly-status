@@ -1,0 +1,19 @@
+{
+    "author": "Vladimir Barbarosh <vladimir.barbarosh@gmail.com>",
+    "license": "MIT",
+    "name": "@vbarbarosh/user-friendly-status",
+    "version": "0.0.0",
+    "description": "A set of rules and tools to write programs which shows their progress to the end user",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vbarbarosh/user-friendly-status.git"
+    },
+    "bugs": {
+        "url": "https://github.com/vbarbarosh/user-friendly-status/issues"
+    },
+    "homepage": "https://github.com/vbarbarosh/user-friendly-status#readme"
+}
