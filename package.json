@@ -31,6 +31,7 @@
     "dependencies": {
         "@vbarbarosh/ffmpeg-helpers": "^0.5.2",
         "@vbarbarosh/node-helpers": "^3.37.0",
+        "@vbarbarosh/user-friendly-status": "^0.2.1",
         "array.prototype.findlastindex": "^1.2.5",
         "object.fromentries": "^2.0.8",
         "string.prototype.replaceall": "^1.0.10"
