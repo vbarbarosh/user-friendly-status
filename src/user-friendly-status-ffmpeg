@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
-require('./polyfill');
+require('./helpers/polyfill');
 
 const cli = require('@vbarbarosh/node-helpers/src/cli');
 const ffprobe = require('@vbarbarosh/ffmpeg-helpers/src/ffprobe');
-const fs = require('fs');
 const shell_ffmpeg_progress = require('@vbarbarosh/ffmpeg-helpers/src/shell_ffmpeg_progress');
 const shell_json = require('@vbarbarosh/node-helpers/src/shell_json');
+const user_friendly_status = require('./helpers/user_friendly_status');
 
 cli(main);
 
@@ -18,17 +18,5 @@ async function main()
     await shell_ffmpeg_progress(args, {
         probe: await shell_json(ffprobe({input})),
         user_friendly_status: s => user_friendly_status(fm.replaceAll('{}', s)),
-    });
-}
-
-// Treat /dev/fd/3 as a special file for user-friendly messages.
-// But, if no such file was open, print use-friendly messages to the stderr.
-function user_friendly_status(s)
-{
-    const tmp = s + '\n';
-    fs.write(3, tmp, function (error) {
-        if (error) {
-            process.stderr.write(tmp);
-        }
     });
 }
